@@ -1,0 +1,55 @@
+.awards {
+  padding: 135px 0px;
+  background-image: url("../img/awards/bg.jpg");
+  background-image: url("../img/awards/bg.webp");
+  background-color: $white-gray;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (max-width: $md1+px) {
+    padding: 105px 0px;
+  }
+  @media (max-width:$md2+px) {
+    padding: 75px 0px;
+  }
+  @media (max-width:$md3+px) {
+    padding: 55px 0px;
+  }
+  @media (max-width:$md4+px) {
+    padding: 25px 0px;
+  }
+  &__container {}
+  &__row {
+    margin: 0px -15px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $md2+px) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+  &__column {
+    margin: 15px;
+  }
+}
+.awards-item {
+  &__row {
+    display: flex;
+  }
+  &__icon {
+    margin: 0px 15px 0px 0px;
+  }
+  &__content {
+    padding: 10px 0px 0px 0px;
+  }
+  &__title {
+    color: $black;
+  }
+  &__subtitle {
+    @extend .text-style;
+    @extend .text-style-b;
+    max-width: 190px;
+  }
+  &__button {}
+}

@@ -1,0 +1,147 @@
+//<BUTTONS>====================================================================================================
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  background-color: transparent;
+  font-weight: 600;
+  color: #D8D8D9;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  border: 2px solid #D8D8D9;
+  position: relative;
+  &__body {
+    position: relative;
+    z-index: 1;
+  }
+  &:after {
+    content: '+';
+    font-size: 34px;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: text-top;
+    margin-left: 12px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background-color: rgba(60, 59, 60, 0.6);
+    @include anim(0.5s, 0s);
+  }
+  @media (min-width: 992px) {
+    &:hover {
+      &:before {
+        height: 100%;
+      }
+    }
+  }
+  &.fw {
+    width: 100%;
+  }
+}
+//</BUTTONS>====================================================================================================
+//<INPUT>====================================================================================================
+input[type=text], input[type=email], input[type=tel], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input {
+  border-radius: 0 !important;
+  width: 100%;
+  display: block;
+  padding: 0px 20px 9px 20px;
+  @extend .text-style;
+  color: #ffffff;
+  background-color: transparent;
+  border-bottom: 1px solid #89898B;
+  @include anim(0.3s, 0s);
+  &::placeholder {
+    color: #36353D;
+  }
+  &:focus {
+    border-bottom: 1px solid #ffffff;
+  }
+  &.focus {}
+  &.err {}
+}
+//<INPUT>====================================================================================================
+//<textarea>====================================================================================================
+textarea.input {
+  resize: none;
+  padding: 0px 20px;
+}
+//<textarea>====================================================================================================
+//<select>====================================================================================================
+.select {
+  &__title {
+    color: #36353D;
+    position: relative;
+    cursor: pointer;
+    @extend .text-style;
+    border-bottom: 1px solid #89898B;
+    padding: 0px 20px 9px 20px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      transform: translateY(-50%);
+      background-image: url("../img/icons/arrow.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 14px;
+      height: 9px;
+      @include anim(0.3s, 0s);
+    }
+    &.open {
+      border-bottom: 1px solid #ffffff;
+      &:after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+    &.selected {
+      color: #ffffff;
+    }
+  }
+  &__list {
+    display: none;
+    padding: 10px 0px 0px 20px;
+  }
+  &__item {
+    @extend .text-style;
+    color: #ffffff;
+    cursor: pointer;
+    @include anim(0.3s, 0s);
+    margin: 0px 0px 3px 0px;
+    @media (min-width: 992px){
+      &:hover{
+        span:after{
+          width: 100%;
+        }
+      }
+    }
+    span {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #ffffff;
+        @include anim(0.3s,0s);
+      }
+    }
+  }
+}
+//<select>====================================================================================================

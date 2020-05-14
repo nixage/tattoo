@@ -1,0 +1,136 @@
+//<ГОТОВЫЕ КЛАССЫ>====================================================================================================
+//====================================================================================================
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  img {
+    display: none;
+  }
+}
+//====================================================================================================
+//====================================================================================================
+.lock {
+  overflow: hidden;
+  @media (max-width: 767.98px) {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+  }
+}
+//====================================================================================================
+.title {
+  font-family: "Playfair Display SC";
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  @include adaptiv-font(24, 18);
+  line-height: 32px;
+  color: #F6F6F6;
+  @media (max-width: $md3+px) {
+    line-height: 28px;
+  }
+  @media (max-width:$md4+px) {
+    line-height: 24px;
+  }
+  &-s {
+    @include adaptiv-font(18, 16);
+    line-height: 24px;
+    color: #ffffff;
+    @media (max-width: $md3+px) {
+      line-height: 22px;
+    }
+    @media (max-width:$md4+px) {
+      line-height: 20px;
+    }
+  }
+  &-b {
+    font-size: 61px;
+    line-height: 81px;
+    color: #89898B;
+    @media (max-width: 1440px) {
+      @include adaptiv-font(61, 32);
+    }
+    @media (max-width:$md2+px) {
+      line-height: 70px;
+    }
+    @media (max-width:$md3+px) {
+      line-height: 60px;
+    }
+    @media (max-width:$md4+px) {
+      line-height: 40px;
+    }
+  }
+  &-ext-s{
+		font-size: 14px;
+		line-height: 19px;
+		color: $black;
+  }
+}
+
+//====================================================================================================
+.text-style {
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: #F6F6F6;
+  &-r{
+  	color: $red;
+  }
+  &-b{
+  	color: $black;
+  }
+}
+//====================================================================================================
+
+.logo {
+  &__body {
+    position: relative;
+  }
+  &__text {
+    font-weight: 600;
+    font-size: 7px;
+    line-height: 8px;
+    text-align: center;
+    color: #00CEA6;
+    position: absolute;
+    left: 0;
+    top: 49px;
+    width: 100%;
+  }
+}
+//====================================================================================================
+.more-button {
+  @extend .text-style;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  @include anim(0.3s, 0s);
+  background-color: transparent;
+  @media (min-width: 992px) {
+    &:hover {
+      color: $red;
+    }
+  }
+  &__icon{
+    width: 11.5px;
+    height: 11.5px;
+    border: 1px solid $red;
+    margin: 0px 0px 0px 7px;
+    position: relative;
+    &:after{
+      content:'+';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      color: $red;
+    }
+  }
+
+  &-r {
+    color: $red;
+  }
+}
+//====================================================================================================
+//</ГОТОВЫЕ КЛАССЫ>====================================================================================================
