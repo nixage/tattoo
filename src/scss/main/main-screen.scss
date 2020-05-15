@@ -3,8 +3,13 @@
   overflow: hidden;
   z-index: 1;
   padding: 75px 0px 100px 0px;
+  height: 100vh;
+  min-height: 640px;
   @media (max-width: $md3+px) {
     padding: 55px 0px 50px 0px;
+  }
+  @media (max-width:$md4+px){
+    min-height: auto;
   }
   &__bg {
     position: absolute;
